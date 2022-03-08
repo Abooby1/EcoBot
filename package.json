@@ -1,0 +1,19 @@
+{
+  "name": "ecobot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@replit/database": "^2.0.1",
+    "express": "^4.17.2",
+    "index.js": "^0.0.3",
+    "photop-client": "^3.1.5",
+    "simple-socket-js": "^1.1.11"
+  }
+}
