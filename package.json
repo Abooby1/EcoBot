@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "echo hi",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +16,6 @@
     "express": "^4.17.2",
     "index.js": "^0.0.3",
     "photop-client": "^3.1.5",
-    "simple-socket-js": "^1.1.11"
+    "random-words": "^1.1.2"
   }
 }
