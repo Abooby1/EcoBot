@@ -27,6 +27,22 @@ const TempBan = {
   permission: "Owner"
 };
 
+const SetMoney = {
+  names: ["setmoney"],
+  func: async ({ chat, args: [userid, money] }) => {
+    if (userid === "@me") {
+      userid = chat.user.id;
+    }
+    const data = await getUserDataManager(userid);
+    data.value.money = parseFloat(money) || 0;
+    data.update();
+    chat.reply(`I set ${userid}'s money to ${data.value.money}`)
+  },
+  hidden: true,
+  permission: "Owner",
+  description: "Sets your money."
+};
+
 const Test = {
   names: ["test"],
   func: ({chat})=>{
@@ -37,4 +53,4 @@ const Test = {
   hidden: true
 };
 
-export {Test, TempBan}
+export {Test, TempBan, SetMoney}

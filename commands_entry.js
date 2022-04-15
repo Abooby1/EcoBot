@@ -14,7 +14,7 @@ function registerCommand(command) {
 Commands.forEach(registerCommand)
 
 export async function onChat(client, chat) {
-  if (chat.author.id === "61c60d39e1e6417b595cfd19") return;
+  if (chat.author.id === "61f9afa941a9e239b62ec6f5") return;
   if (chat.text.startsWith(PREFIX)) {
     const match = chat.text.substring(PREFIX.length).match(/([a-z0-9\.]+)(.*)/i);
     if (match) {

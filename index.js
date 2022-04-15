@@ -6,19 +6,20 @@ const client = new Client({ username: "EcoBot", password: process.env['Pass'] },
 
 const noop = () => { };
 
-client.onPost = async (post) => {
-if (post.text.match(START)) {
-    setTimeout(function( ) {
-      post.chat(`Im connected to ${post.author.username}'s post!`)
-    }, 2000)
-  }
-  
+client.onPost = async (post) => {  
   const resetTimeout = await post.connect(60000, () => {
     post.onChat = noop; //replace post.onChat to free up memory
     if (post.text.match("$connect")) {
       post.chat("Bot has disconnected... Reason: inactivity")
     }
   })
+
+  if (post.text.match(START)) {
+    setTimeout(function( ) {
+      resetTimeout()
+      post.chat(`Im now connected to ${post.author.username}'s post!`)
+    }, 2000)
+  }
 
   post.onChat = (chat) => {
     resetTimeout();

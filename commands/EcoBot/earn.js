@@ -1,7 +1,7 @@
 const Earn = {
   names: ["earn"],
   func: ({chat, body, userData})=>{
-    if (body) {
+    if (body && body <= 50) {
       chat.reply("Earning has started")
       var Times = 0
       var Earned = 0
@@ -24,7 +24,7 @@ const Earn = {
         }
       }, 10000)
     } else {
-      chat.reply("You need the times you want to earn...")
+      chat.reply("Your times have to be less than 50 and more than nothing...")
     }
   },
   description: "Earn money to buy items (for other bots or exclusive items for Abicam Studios games)",

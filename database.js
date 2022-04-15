@@ -11,7 +11,9 @@ ranks:
 */
 
 const specialRanks = {
-  "6154f0d0a8d6d106c5b869b6": "Owner"
+  "6154f0d0a8d6d106c5b869b6": "Owner",
+
+  "6244e8a4a95b113f10314747": "Bot"
 }
 
 export const defaultData = {
