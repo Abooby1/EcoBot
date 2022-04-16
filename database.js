@@ -20,6 +20,8 @@ export const defaultData = {
   money: 0,
   level: 0,
   rank: "Normal",
+  
+  BannedTime: 0
 };
 
 export async function getDataForUserId(userid) {

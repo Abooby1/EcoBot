@@ -34,6 +34,9 @@ export async function onChat(client, chat) {
           }
           if (!valid) {
             chat.reply("You are not allowed to use this command")
+            if (context.userData.value.BannedTime > 0) {
+              
+            }
             return;
           }
         }

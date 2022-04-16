@@ -1,4 +1,4 @@
-import { getUserDataManager } from "../../database.js";
+import { defaultData, getUserDataManager } from "../../database.js";
 
 const TempBan = {
   names: ["ban"],
@@ -43,6 +43,29 @@ const SetMoney = {
   description: "Sets your money."
 };
 
+const ResetData = {
+  names: ["resetdata"],
+  func: async ({ chat, args: [userid] }) => {
+    if (userid == "6154f0d0a8d6d106c5b869b6") return;
+    if (userid === "@me") {
+      userid = chat.user.id;
+    }
+    const data = await getUserDataManager(userid);
+
+    // deep clone defaultData
+    data.value = JSON.parse(JSON.stringify(defaultData));
+    data.applyRanks();
+
+    setTimeout(function() {
+      data.update();
+      chat.reply("I reset their data!")
+    }, 1500)
+  },
+  hidden: true,
+  description: "Resets a specific substat of a user to its default value. Note: Ranks are hard coded and cannot be reset.",
+  permission: "Owner",
+}
+
 const Test = {
   names: ["test"],
   func: ({chat})=>{
@@ -53,4 +76,4 @@ const Test = {
   hidden: true
 };
 
-export {Test, TempBan, SetMoney}
+export {Test, TempBan, SetMoney, ResetData}

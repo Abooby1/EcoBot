@@ -1,7 +1,8 @@
-import {Test, TempBan, SetMoney} from "./debug.js"
+import {Test, TempBan, SetMoney, ResetData} from "./debug.js"
 
 export const Actions = [
   Test,
   TempBan,
-  SetMoney
+  SetMoney,
+  ResetData
 ]

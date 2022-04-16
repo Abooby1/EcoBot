@@ -1,12 +1,12 @@
 const Earn = {
   names: ["earn"],
   func: ({chat, body, userData})=>{
-    if (body && body <= 50) {
+    if (body && body <= 50 && body > 0) {
       chat.reply("Earning has started")
       var Times = 0
       var Earned = 0
       var EarnSet = setInterval(function( ) {
-        if (Times != body) {
+        if (Times != body && body > Times && Times <= 49) {
           Times = Times + 1
           if (userData.value.level >= 2.5) {
             Earned = userData.value.level * 0.006
