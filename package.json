@@ -15,7 +15,8 @@
     "@replit/database": "^2.0.1",
     "express": "^4.17.2",
     "index.js": "^0.0.3",
-    "photop-client": "^3.1.5",
+    "photop-client": "^3.2.3",
+    "quick.db": "^7.1.3",
     "random-words": "^1.1.2"
   }
 }
